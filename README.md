@@ -36,10 +36,11 @@ selected={true}, # 为true表示该论文会展示在实验室首页
 
 ```
 文件名: year-month-day-xxxx.md
-例如: 2023-12-02-cmetts.md
-具体内容可以参照 2023-12-02-cmetts.md
+例如: 2023-11-11-demo.md
+具体内容可以参照 2023-11-11-demo.md
 ```
 - demo 页面需要包含图片、音频等的 (不要上传代码、模型等大型文件), 统一将相关资源放在 `_assets/your_name` 文件夹下, 文件夹以姓名拼音命名
+- markdown 格式
 
 ### 4. 代码
 
