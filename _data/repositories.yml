@@ -1,8 +1,5 @@
 github_users:
   - isiplabahu
-  - woaki
 
 github_repos:
   - isiplabahu/isiplabahu.github.io
-  - woaki/tacotron-edm
-  - woaki/tacotron2-cmetts
