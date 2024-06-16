@@ -61,4 +61,8 @@ github_repos:
 
 [如何创建 pull request ](https://www.freecodecamp.org/chinese/news/how-to-make-your-first-pull-request-on-github/)
 
+### 6. 网站管理员检查后同意提交的修改
+
+![accept_request](/assets/img/readme_request.png "accept request")
+
 **除了以上提到的几个部分，请慎重修改其他地方，网站管理员需要尤其注意！！！**
