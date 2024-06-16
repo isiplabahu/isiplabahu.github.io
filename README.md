@@ -59,10 +59,12 @@ github_repos:
 
 ### 5. 提交你的修改
 
+非管理员需要进行这一步, 管理员可以直接`git push`
+
 [如何创建 pull request ](https://www.freecodecamp.org/chinese/news/how-to-make-your-first-pull-request-on-github/)
 
 ### 6. 网站管理员检查后同意提交的修改
 
 ![accept_request](/assets/img/readme_request.png "accept request")
 
-**除了以上提到的几个部分，请慎重修改其他地方，网站管理员需要尤其注意！！！**
+==除了以上提到的几个部分，请慎重修改其他地方，网站管理员需要尤其注意！！!==
