@@ -12,7 +12,7 @@ git clone https://github.com/your_user_name/isiplabahu.github.io.git
 
 ### 2. 添加论文引用
 
-在 `_bibliography/papers.bib` 中添加你的论文, 格式为 bib, 参考如下
+在 `_bibliography/papers.bib` 中添加你的论文, 格式为 bib, 参考如下:
 
 ```
 @article{20230115,
@@ -20,7 +20,7 @@ bibtex_show={true},
 author={Gao, Teng and Pan, Qing and Zhou, Jian and Wang, Huabin and Tao, Liang and Kwan, Hon},
 year={2023},
 month={01},
-title={A Novel Attention-Guided Generative Adversarial Network for Whisper-to-Normal Speech Conversion},
+title={A Novel Attention-Guided Generative Adversarial Network for Whisper-to-Normal Speech Conversion (Submitted)},
 volume={15},
 journal={Cognitive Computation},
 doi={10.1007/s12559-023-10108-9},
@@ -29,6 +29,7 @@ html={https://arxiv.org/abs/2111.01342},
 selected={true}, # 为true表示该论文会展示在实验室首页
 }
 ```
+自行填写论文状态信息，例如论文名、年月日、论文状态 (Submitted, Accepted) 等
 
 ### 3. 添加论文 demo 页面
 
@@ -53,12 +54,11 @@ github_users:
 
 github_repos:
   - isiplabahu/isiplabahu.github.io
-  - woaki/tacotron-edm
-  - clumsyroot/tacotron2-cmetts
-  - your_github_user_name/repositories_name # 在这里添加
+  - your_github_user_name/repositories_name # 在这里添加你的代码，格式为: 你的github账号名称/代码仓库名称
 ```
 
 ### 5. 提交你的修改
 
 [如何创建 pull request ](https://www.freecodecamp.org/chinese/news/how-to-make-your-first-pull-request-on-github/)
 
+**除了以上提到的几个部分，请慎重修改其他地方，网站管理员需要尤其注意！！！**
