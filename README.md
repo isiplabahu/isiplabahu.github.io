@@ -57,9 +57,10 @@ github_repos:
   - your_github_user_name/repositories_name # 在这里添加你的代码，格式为: 你的github账号名称/代码仓库名称
 ```
 
+**非管理员需要进行以下两步, 管理员可以直接`git push`**
+
 ### 5. 提交你的修改
 
-非管理员需要进行这一步, 管理员可以直接`git push`
 
 [如何创建 pull request ](https://www.freecodecamp.org/chinese/news/how-to-make-your-first-pull-request-on-github/)
 
