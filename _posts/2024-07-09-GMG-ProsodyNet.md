@@ -1,6 +1,6 @@
 ---
 layout: post # 不用改变
-title: Demo for GMG ProsodyNet# 博客标题
+title: Demo for GMG ProsodyNet # 博客标题
 date: 2024-07-09 21:26:00+0800 # 时间
 description: Demo for "Multi-granularity Prosodic Speech Synthesis with Grammar Information" # 博客描述
 tags: GMG ProsodyNet demo # 标签 -- 以空格分隔
@@ -12,9 +12,10 @@ thumbnail: # post 预览图, 可以留空
 
 ## Multi-granularity Prosodic Speech Synthesis with Grammar Information
 
-- Personalized speech synthesis involves learning an individual's unique speaking patterns from a reference audio to generate speech that mimics the speaker's habitual rhythm of speech. However, the one-to-many mapping between text and speech, combined with the dynamic nature of personalized speech style characteristics in the reference audio, makes accurate personalized speech synthesis challenging. **To address this challenge, we propose the Grammar Infused Multi-granularity Prosody Network (GMG ProsodyNet) for personalized speech synthesis.** Specifically, 1) We model prosodic features hierarchically at the levels of utterance, content syntax, word, and phoneme. We utilize the utterance-level prosodic feature to guide the prediction of fine-grained prosodic features according to the hierarchical property of prosodic features. We introduce a context syntax encoder to improve the prediction accuracy of duration, pitch, and energy characteristics in the synthesized audio. The proposed word-level prosodic encoder can efficiently extract valuable pitch dynamic and speech continuity features from the word spectrum. For controlling subtle prosodic nuances, we employ phoneme-level prosodic modeling. 2) We utilize graph neural network (GNN) to extract syntax level prosodic features from the syntax graph constructed by word nodes to make word nodes interact and capture grammatical features reflecting dependencies between distant words. The proposed method was evaluated on the LJSpeech dataset, and experimental results demonstrate that the proposed GMG ProsodyNet effectively encodes delicate and personalized prosodic features, leading to improved speech synthesis quality, fluency, and naturalness.
+- Personalized speech synthesis involves learning an individual's unique speaking patterns from a reference audio to generate speech that mimics the speaker's habitual rhythm. However, the one-to-many mapping between text and speech, combined with the dynamic nature of personalized speech style characteristics in the reference audio, poses significant challenges for accurate personalized speech synthesis. **In this paper, we propose a Grammar Infused Multi-granularity Prosody Network (GMG ProsodyNet) for personalized speech synthesis.** Specifically, 1) We model prosodic features hierarchically at the levels of utterance, content syntax, word, and phoneme. We utilize the utterance-level prosodic feature to guide the prediction of fine-grained prosodic features according to the hierarchical property of prosodic features. We introduce a context syntax encoder to improve the prediction accuracy of duration, pitch, and energy characteristics in the synthesized audio. The proposed word-level prosodic encoder can efficiently extract valuable pitch dynamic and speech continuity features from the word spectrum. For controlling subtle prosodic nuances, we employ phoneme-level prosodic modeling. 2) We extract syntax level prosodic features from the syntax graph constructed by Graph Neural Network (GNN) with word as node, exploiting grammatical dependencies between distant words. Experimental results demonstrate that the proposed GMG ProsodyNet can effectively encode delicate and personalized prosodic features, leading to improved speech synthesis quality, fluency, and naturalness.
+
 ### 1. The model architecture of the proposed model
-![这是图片](/assets/img/model_structure.pdf "The Overall Framework of the Proposed Personalized Prosodic Speech Synthesis Model.")
+![这是图片](/assets/gmgprosody/img/model_structure.pdf"The Overall Framework of the Proposed Personalized Prosodic Speech Synthesis Model.")
 
 ### 2. TTS Samples in the ablation study 
 
@@ -24,45 +25,45 @@ thumbnail: # post 预览图, 可以留空
 
 Reference/Target Text: Printing in the only sense with which we are at present concerned, differs from most if not from all the arts and crafts represented in the exhibition.
 
-| GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
-| :------: | :---------: | :----------: |
-|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0001.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0001.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0001.wav" type="audio/wav" controls preload></audio>|
+|   Reference Speech   | GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
+| :------: | :------: | :---------: | :----------: |
+|<audio src="/assets/gmgprosody/comparation/parallel/LJ001-0001.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0001.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0001.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0001.wav" type="audio/wav" controls preload></audio>|
 
 Reference/Target Text: It is of the first importance that the letter used should be fine in form.
 
-| GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
-| :------: | :---------: | :----------: |
-|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-00011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0011.wav" type="audio/wav" controls preload></audio>|
+|   Reference Speech   | GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
+| :------: | :------: | :---------: | :----------: |
+|<audio src="/assets/gmgprosody/comparation/parallel/LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0011.wav" type="audio/wav" controls preload></audio>|
 
 Reference/Target Text: That the forms of printed letters should follow more or less closely those of the written character and they followed them very closely.
 
-| GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
-| :------: | :---------: | :----------: |
-|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0017.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0017.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0017.wav" type="audio/wav" controls preload></audio>|
+|   Reference Speech   | GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
+| :------: | :------: | :---------: | :----------: |
+|<audio src="/assets/gmgprosody/comparation/parallel/LJ001-0017.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0017.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0017.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0017.wav" type="audio/wav" controls preload></audio>|
 
 Reference/Target Text: The lower case being in fact invented  in the early middle ages.
 
-| GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
-| :------: | :---------: | :----------: |
-|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0020.wav" type="audio/wav" controls preload></audio>|
+|   Reference Speech   | GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
+| :------: | :------: | :---------: | :----------: |
+|<audio src="/assets/gmgprosody/comparation/parallel/LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0020.wav" type="audio/wav" controls preload></audio>|
 
-Reference/Target Text: Imitates a much freer hand simpler rounder and less spiky and therefore far pleasanter and easier to read.
+Reference/Target Text: They discarded this for a more completely roman and far less beautiful letter.
 
-| GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
-| :------: | :---------: | :----------: |
-|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0035.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0035.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0035.wav" type="audio/wav" controls preload></audio>|
+|   Reference Speech   | GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
+| :------: | :------: | :---------: | :----------: |
+|<audio src="/assets/gmgprosody/comparation/parallel/LJ001-0035.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0035.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/parallel/LJ001-0035.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0035.wav" type="audio/wav" controls preload></audio>|
 
 #### Non-Parallel prosodic speech synthetic
 
 Target Text: The kitten weighs twenty eight pounds.
 
-| GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
-| :------: | :---------: | :----------: |
-|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0054.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0054.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0054.wav" type="audio/wav" controls preload></audio>|
-|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0070.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0070.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0070.wav" type="audio/wav" controls preload></audio>|
-|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0085.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0085.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0085.wav" type="audio/wav" controls preload></audio>|
-|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0094.wav.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0094.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0094.wav" type="audio/wav" controls preload></audio>|
-|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0111.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0111.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0111.wav" type="audio/wav" controls preload></audio>|
+|   Reference Speech   | GMG ProsodyNet |    GMG ProsodyNet w/o CSynEnc   |    GMG ProsodyNet w/o CSynencwpre    |
+| :------: | :------: | :---------: | :----------: |
+|<audio src="/assets/gmgprosody/comparation/nonparallel/LJ001-0054.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0054.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0054.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0054.wav" type="audio/wav" controls preload></audio>|
+|<audio src="/assets/gmgprosody/comparation/nonparallel/LJ001-0070.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0070.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0070.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0070.wav" type="audio/wav" controls preload></audio>|
+|<audio src="/assets/gmgprosody/comparation/nonparallel/LJ001-0085.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0085.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0085.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0085.wav" type="audio/wav" controls preload></audio>|
+|<audio src="/assets/gmgprosody/comparation/nonparallel/LJ001-0094.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0094.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0094.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0094.wav" type="audio/wav" controls preload></audio>|
+|<audio src="/assets/gmgprosody/comparation/nonparallel/LJ001-0111.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/con_LJ001-0111.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/ablation/nonparallel/word_LJ001-0111.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/nonparallel/ada_LJ001-0111.wav" type="audio/wav" controls preload></audio>|
 
 ### 3. TTS Samples in the Comparison study 
 
@@ -76,25 +77,25 @@ Reference/Target Text: Printing  in the only sense with  which we are at present
 | :----------: | :----------: | :----------: | :----------: | :----------: |
 |<audio src="/assets/gmgprosody/comparation/parallel/LJ001-0001.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0001.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/FG_LJ001-0001.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/syn_LJ001-0001.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0001.wav" type="audio/wav" controls preload></audio>|
 
-Reference/Target Text: Printing  in the only sense with  which we are at present concerned, differs  from most if not from all the arts and crafts represented in the exhibition.d
+Reference/Target Text: It is of the first importance that the letter used should be fine in form.
 
 |   Reference Speech   |      AdaSpeech     |    FG-transformerTTS     |   SyntaSpeech   | GMG ProsodyNet |
 | :----------: | :----------: | :----------: | :----------: | :----------: |
-|<audio src="/assets/gmgprosody/parallel/LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/parallel/ada_LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/parallel/FG_LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/parallel/syn_LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/parallel/synLJ001-0011.wav" type="audio/wav" controls preload></audio>|
+|<audio src="/assets/gmgprosody/comparation/parallel/LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/FG_LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/syn_LJ001-0011.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0011.wav" type="audio/wav" controls preload></audio>|
 
-Reference/Target Text: Printing  in the only sense with  which we are at present concerned, differs  from most if not from all the arts and crafts represented in the exhibition.
+Reference/Target Text: That the forms of printed letters should follow more or less closely those of the written character and they followed them very closely.
 
 |   Reference Speech   |      AdaSpeech     |    FG-transformerTTS     |   SyntaSpeech   | GMG ProsodyNet |
 | :----------: | :----------: | :----------: | :----------: | :----------: |
 |<audio src="/assets/gmgprosody/comparation/parallel/LJ001-0017.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0017.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/FG_LJ001-0017.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/syn_LJ001-0017.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0017.wav" type="audio/wav" controls preload></audio>|
 
-Reference/Target Text: Printing  in the only sense with  which we are at present concerned, differs  from most if not from all the arts and crafts represented in the exhibition.d
+Reference/Target Text: The lower case being in fact invented  in the early middle ages.
 
 |   Reference Speech   |      AdaSpeech     |    FG-transformerTTS     |   SyntaSpeech   | GMG ProsodyNet |
 | :----------: | :----------: | :----------: | :----------: | :----------: |
-|<audio src="/assets/gmgprosody/parallel/LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/parallel/ada_LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/parallel/FG_LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/parallel/syn_LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/parallel/synLJ001-0020.wav" type="audio/wav" controls preload></audio>|
+|<audio src="/assets/gmgprosody/comparation/parallel/LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/ada_LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/FG_LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/syn_LJ001-0020.wav" type="audio/wav" controls preload></audio>|<audio src="/assets/gmgprosody/comparation/parallel/synLJ001-0020.wav" type="audio/wav" controls preload></audio>|
 
-Reference/Target Text: Printing  in the only sense with  which we are at present concerned, differs  from most if not from all the arts and crafts represented in the exhibition.
+Reference/Target Text: They discarded this for a more completely roman and far less beautiful letter.
 
 |   Reference Speech   |      AdaSpeech     |    FG-transformerTTS     |   SyntaSpeech   | GMG ProsodyNet |
 | :----------: | :----------: | :----------: | :----------: | :----------: |
