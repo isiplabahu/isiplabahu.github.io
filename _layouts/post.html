@@ -1,5 +1,10 @@
 ---
 layout: default
+_styles: |
+.container {
+  overflow-x: hidden;  /* 隐藏水平滚动条 */
+  overflow-y: auto;    /* 保持垂直滚动条可用 */
+}
 ---
 <!-- _layouts/post.html -->
 {%- assign year = page.date | date: "%Y" -%}
